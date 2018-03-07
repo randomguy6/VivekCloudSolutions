@@ -47,6 +47,6 @@ public class ServerCred {
     }
     
     public String toString(){
-        return "Added new Server configuration :- Ram:"+ram+" processor: "+processor +" networktype:"+Type ;
+        return "Added new Server configuration : Ram: "+ram+" processor: "+processor +" networktype: "+Type ;
     }
 }
