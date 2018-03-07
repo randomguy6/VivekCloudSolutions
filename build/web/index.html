@@ -1,0 +1,57 @@
+
+<html>
+    <head>
+        <title>Cloud Server Management Solution</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <img src="LogoName.png" alt="Its just the company name" title="Cloud Server Management Solution">
+        <script src="WebSockChanger.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <br><br>
+        
+        <div>       
+        <h2>Please fill out the server configuration and apply .</h2>
+        <a href="#" onClick="showForm();">Add a server</a>
+        <form id = '_form' action="">
+            <h3>Add Server</h3>
+            <span>Processor Speed:<br>
+            <input type = 'text' id = '_processorSpeed'></span>
+            
+            <span>Processor Core Count:<br>
+            
+            <input type = 'radio' name = '_processorCore' value = "1">1<br>
+            <input type = 'radio' name = '_processorCore' value = "2" checked>2<br>
+            <input type = 'radio' name = '_processorCore' value = "4">4<br></span>
+            
+            <span>Ram Speed:<br>
+            <input type = 'text' id = '_ramSpeed'></span>
+            
+            <span>Ram Capacity:<br>
+            <select>
+                <option id = '_ramCap' value = "12">12</option>
+                <option id = '_ramCap' value = "16">16</option>
+                <option id = '_ramCap' value = "20">20</option>
+                <option id = '_ramCap' value = "24">24</option>
+                <option id = '_ramCap' value = "28">28</option>
+                <option id = '_ramCap' value = "32">32</option>
+            </select>
+            
+            <span>Network Type:<br>
+                <input type = 'text' id = '_type' ></span><br>
+            <input type = "button" value = 'Apply Server Profile' onclick='submitForm();'>
+            <input type = "reset">
+            </form>
+                </div>
+                    
+                        <!textarea align="center" readonly="true" rows="26" cols="50" id="serverdetails"></textarea>     
+<br>          
+        <p>Summary of added server profiles/configurations:</p>
+        <div id = 'servers'>
+            </div>
+        
+                        
+    </body>
+</html>
