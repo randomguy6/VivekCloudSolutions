@@ -7,7 +7,7 @@ window.onload = hideForm;
 var wsUri = "ws://localhost:8080/VivekCloudSolutions/actions";
  var socket = new WebSocket(wsUri); 
 
-var username; 
+//var username; 
  //socket.onopen = function(evt) { onOpen(evt) }; 
  socket.onmessage = function(evt) { onMessage(evt) }; 
  //socket.onerror = function(evt) { onError(evt) }; 
@@ -60,10 +60,10 @@ function addServer(procSpeed, procCore, ramCap, ramSpeed, networkType) {
 socket.send(JSON.stringify(server));
 
 }
-function showServers(server) {
-    var doc = document.getElementById("people");
+/*function showServers(server) {
+    var doc = document.getElementById("servers");
     
-}
+}*/
 
 function onMessage(evt) { 
      //console.log("onMessage: " + evt.data); 
