@@ -9,6 +9,19 @@ and open the template in the editor.
 */
 h2 {
 }
+
+a{
+    text-decoration: none;
+    color: rgb(0,0,0);
+    background: rgb(255,255,255);
+}
+
+a:hover{
+    text-decoration: underline;
+    color:rgb(255,255,255);
+    background: rgb(0,0,0);
+}
+
 body{
     font-family: Helvetica, Courier New, Arial;
     font-size: 1em;
