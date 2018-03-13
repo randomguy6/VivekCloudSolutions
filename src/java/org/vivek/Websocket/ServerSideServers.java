@@ -60,8 +60,10 @@ public class ServerSideServers {
               if("add".equals(jsonMessage.getString("action"))){
                  System.out.println("handle message 4");
                  ServerCred server = new ServerCred();
-                 server.setProcessor(jsonMessage.getString("pCore"));
-                 server.setRam(jsonMessage.getString("rSpeed"));
+                 server.setProcessorCore(jsonMessage.getString("pCore"));
+                 server.setProcessorSpeed(jsonMessage.getString("pSpeed"));
+                 server.setRamSpeed(jsonMessage.getString("rSpeed"));
+                 server.setRamCore(jsonMessage.getString("rCap"));
                  server.setType(jsonMessage.getString("nType"));          
                  try{
                      System.out.println("send message back.."+server.toString());

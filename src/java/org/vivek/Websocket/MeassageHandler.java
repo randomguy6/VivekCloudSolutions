@@ -45,8 +45,8 @@ public class MeassageHandler {
         JsonProvider provider = JsonProvider.provider();
         JsonObject addMessage = provider.createObjectBuilder()
                 .add("action", "add")
-                .add("processor", survey.getProcessor())
-                .add("ram", survey.getRam())
+                .add("processor", survey.getProcessorCore())
+                .add("ram", survey.getRamSpeed())
                 .add("Type", survey.getType())
                 .build();
         return addMessage;
