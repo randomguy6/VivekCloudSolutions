@@ -26,7 +26,7 @@ import org.vivek.model.ServerCred;
 public class MeassageHandler {
     private int deviceId = 0;
     private final Set<Session> sessions = new HashSet<>();
-    private final Set<ServerCred> surveys = new HashSet<>();
+    private final Set<ServerCred> servers = new HashSet<>();
     
     public void addSession(Session session){
         System.out.println("addSession Method");
