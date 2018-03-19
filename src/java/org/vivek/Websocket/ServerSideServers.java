@@ -50,28 +50,36 @@ public class ServerSideServers {
         Logger.getLogger(ServerSideServers.class.getName()).log(Level.SEVERE, null, error);
         ;
     }
+
     @OnMessage
-        public void handleMessage(String message, Session clientSession){
-            System.out.println("Handle Message Method" +message);
-            try (JsonReader reader = Json.createReader(new StringReader(message))) {
-                System.out.println("handle message 2");
-                JsonObject jsonMessage = reader.readObject();
-                System.out.println("handle message 3");
-              if("add".equals(jsonMessage.getString("action"))){
-                 System.out.println("handle message 4");
-                 ServerCred server = new ServerCred();
-                 server.setProcessorCore(jsonMessage.getString("pCore"));
-                 server.setProcessorSpeed(jsonMessage.getString("pSpeed"));
-                 server.setRamSpeed(jsonMessage.getString("rSpeed"));
-                 server.setRamCore(jsonMessage.getString("rCap"));
-                 server.setType(jsonMessage.getString("nType"));          
-                 try{
-                     System.out.println("send message back.."+server.toString());
-                 clientSession.getBasicRemote().sendText(server.toString());
-                 System.out.println("send messgae completed");
-                 }catch(Exception e){}
-              }
-            }
+    public void handleMessage(String message, Session clientSession) {
+        System.out.println("Handle Message Method" + message);
+       
+        try (JsonReader reader = Json.createReader(new StringReader(message))) {
             
-}
+            System.out.println("handle message 2");
+            JsonObject jsonMessage = reader.readObject();
+            System.out.println("handle message 3");
+            
+            if ("add".equals(jsonMessage.getString("action"))) {
+                System.out.println("handle message 4");
+                ServerCred server = new ServerCred();
+                server.setProcessorCore(jsonMessage.getString("pCore"));
+                server.setProcessorSpeed(jsonMessage.getString("pSpeed"));
+                server.setRamSpeed(jsonMessage.getString("rSpeed"));
+                server.setRamCore(jsonMessage.getString("rCap"));
+                server.setType(jsonMessage.getString("nType"));
+                handler.addServer(server);
+                try {
+                    System.out.println("send message back.." + server.toString());
+                    clientSession.getBasicRemote().sendText(server.toString());
+                    System.out.println("send messgae completed");
+                } 
+                
+                catch (Exception e) {
+                }
+            }
+        }
+
+    }
 }

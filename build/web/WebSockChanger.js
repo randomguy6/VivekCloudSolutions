@@ -47,6 +47,14 @@ function addServer(procSpeed, procCore, ramCap, ramSpeed, networkType) {
 socket.send(JSON.stringify(server));
 
 }
+
+function removeServer(servid){
+    var server = {
+    id : servid,
+    action : "remove"
+    };
+    socket.send(JSON.stringify(server));
+}
 /*function showServers(server) {
     var doc = document.getElementById("servers");
     
@@ -56,5 +64,5 @@ function onMessage(evt) {
      //console.log("onMessage: " + evt.data); 
         // serverdetails.innerHTML += evt.data + "\n"; 
        var dt= new Date();
-         servers.innerHTML = servers.innerHTML+"<br><b>>></b><font color=white>"+ evt.data + "</font>  on:  "+dt.getDate() +":"+dt.getMonth()+":"+dt.getFullYear()+" "+dt.getHours()+":"+dt.getMinutes() + " \n";
+         servers.innerHTML = servers.innerHTML+"<br><b>>></b><font color=white>"+ evt.data + "</font>  on:  "+dt.getDate() +":"+dt.getMonth()+":"+dt.getFullYear()+" "+dt.getHours()+":"+dt.getMinutes() + "<a href = '#' onClick = 'removeServer();'>Remove Server</a> \n";
  }

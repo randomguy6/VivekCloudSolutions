@@ -36,6 +36,12 @@ public class MeassageHandler {
          //   JsonObject addMessage = createAddMessage(survey);
         //}
     }
+    
+    public void addServer(ServerCred server){
+        System.out.println("addServer Method");
+        servers.add(server);
+    }
+    
     public void removeSession(Session session){
         System.out.println("removeSession Method");
         sessions.remove(session);
