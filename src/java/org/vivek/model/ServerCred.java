@@ -16,8 +16,18 @@ public class ServerCred {
     private String ramSpeed;
     private String ramCore;
     private String Type;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     
     public ServerCred(String processor, String ram) {
+        this.id = id++;
         this.processorCore = processor;
         this.ramSpeed = ram;
     }

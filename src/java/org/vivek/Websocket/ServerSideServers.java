@@ -62,7 +62,7 @@ public class ServerSideServers {
             System.out.println("handle message 3");
             
             if ("add".equals(jsonMessage.getString("action"))) {
-                System.out.println("handle message 4");
+                System.out.println("handle message ADD");
                 ServerCred server = new ServerCred();
                 server.setProcessorCore(jsonMessage.getString("pCore"));
                 server.setProcessorSpeed(jsonMessage.getString("pSpeed"));
@@ -75,9 +75,12 @@ public class ServerSideServers {
                     clientSession.getBasicRemote().sendText(server.toString());
                     System.out.println("send messgae completed");
                 } 
-                
                 catch (Exception e) {
                 }
+            if("remove".equals(jsonMessage.getString("action"))) {  
+                System.out.print("handle message REMOVE");
+            }
+                
             }
         }
 

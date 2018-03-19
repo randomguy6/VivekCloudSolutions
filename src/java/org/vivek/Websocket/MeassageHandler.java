@@ -31,15 +31,22 @@ public class MeassageHandler {
     public void addSession(Session session){
         System.out.println("addSession Method");
         sessions.add(session);
-        
-        //for(ServerCred survey : surveys){
-         //   JsonObject addMessage = createAddMessage(survey);
-        //}
     }
     
     public void addServer(ServerCred server){
         System.out.println("addServer Method");
         servers.add(server);
+    }
+    
+    public void removeServer(int id){
+        System.out.println("removeServer method");
+        ServerCred server = getServerId(id);
+        servers.remove(server);
+        JsonProvider provider = JsonProvider.provider();
+        JsonObject addMessage = provider.createObjectBuilder()
+                .add("action", "remove")
+                .add("id", id)
+                .build();
     }
     
     public void removeSession(Session session){
@@ -57,4 +64,15 @@ public class MeassageHandler {
                 .build();
         return addMessage;
     }
-}
+
+    private ServerCred getServerId(int id) {
+        ServerCred ret = new ServerCred();
+        for(ServerCred serv : servers){
+            if(serv.getId()==id)
+                serv = ret;
+        }
+        return ret;
+    }
+    }
+
+
