@@ -17,17 +17,8 @@ public class ServerCred {
     private String ramCore;
     private String Type;
     private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
     
     public ServerCred(String processor, String ram) {
-        this.id = id++;
         this.processorCore = processor;
         this.ramSpeed = ram;
     }
@@ -76,7 +67,15 @@ public class ServerCred {
         this.Type = Type;
     }
     
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String toString(){
-        return "Added new Server configuration; Ram Speed: ("+ramSpeed+" MHz) Ram Capacity: ("+ramCore+ "GB), processor core count: ("+processorCore +"-core) processor speed: ("+processorSpeed+ " GHz) networktype: ("+Type +").";
+        return "Ram Speed: ("+ramSpeed+" MHz) Ram Capacity: ("+ramCore+ "GB), processor core count: ("+processorCore +"-core) processor speed: ("+processorSpeed+ " GHz) networktype: ("+Type +").";
     }
 }

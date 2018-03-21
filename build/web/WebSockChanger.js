@@ -31,7 +31,6 @@ function submitForm() {
 }
 
 function addServer(procSpeed, procCore, ramCap, ramSpeed, networkType) {
-    //  alert("addServer");
     var server = {
         pSpeed: procSpeed,
         pCore: procCore,
@@ -40,7 +39,6 @@ function addServer(procSpeed, procCore, ramCap, ramSpeed, networkType) {
         nType: networkType,
         action: 'add'
     };
-//alert(JSON.stringify(server));
     socket.send(JSON.stringify(server));
 }
 

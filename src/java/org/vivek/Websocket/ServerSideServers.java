@@ -70,15 +70,16 @@ public class ServerSideServers {
                 server.setRamCore(jsonMessage.getString("rCap"));
                 server.setType(jsonMessage.getString("nType"));
                 handler.addServer(server);
-                try {
+                /*try {
                     System.out.println("send message back.." + server.toString());
                     clientSession.getBasicRemote().sendText(server.toString());
                     System.out.println("send messgae completed");
                 } 
                 catch (Exception e) {
-                }
+                }*/
             if("remove".equals(jsonMessage.getString("action"))) {  
                 System.out.print("handle message REMOVE");
+                handler.removeServer(jsonMessage.getInt("id"));
             }
                 
             }

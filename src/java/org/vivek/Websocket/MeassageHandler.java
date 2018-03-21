@@ -36,6 +36,9 @@ public class MeassageHandler {
     public void addServer(ServerCred server){
         System.out.println("addServer Method");
         servers.add(server);
+        /*for(ServerCred serv: servers){
+            System.out.println(serv.toString());
+        }*/
     }
     
     public void removeServer(int id){
@@ -43,16 +46,18 @@ public class MeassageHandler {
         ServerCred server = getServerId(id);
         servers.remove(server);
         JsonProvider provider = JsonProvider.provider();
-        JsonObject addMessage = provider.createObjectBuilder()
+        JsonObject removeMessage = provider.createObjectBuilder()
                 .add("action", "remove")
                 .add("id", id)
                 .build();
+        sendToAllConnectedSessions(removeMessage);
     }
     
     public void removeSession(Session session){
         System.out.println("removeSession Method");
         sessions.remove(session);
     }
+        
     private JsonObject createAddMessage(ServerCred survey) {
         System.out.println("createAddMessage Method");
         JsonProvider provider = JsonProvider.provider();
@@ -72,6 +77,21 @@ public class MeassageHandler {
                 serv = ret;
         }
         return ret;
+    }
+    
+    private void sendToAllConnectedSessions(JsonObject message) {
+        for (Session session : sessions) {
+            sendToSession(session, message);
+        }
+    }
+
+    private void sendToSession(Session session, JsonObject message) {
+        try {
+            session.getBasicRemote().sendText(message.toString());
+        } catch (IOException ex) {
+            sessions.remove(session);
+            Logger.getLogger(MeassageHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     }
 
