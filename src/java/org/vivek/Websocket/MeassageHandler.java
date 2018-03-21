@@ -39,6 +39,9 @@ public class MeassageHandler {
         /*for(ServerCred serv: servers){
             System.out.println(serv.toString());
         }*/
+        JsonObject addMessage = createAddMessage(server);
+        sendToAllConnectedSessions(addMessage);
+        System.out.println("sent to all sessions");
     }
     
     public void removeServer(int id){
@@ -88,6 +91,7 @@ public class MeassageHandler {
     private void sendToSession(Session session, JsonObject message) {
         try {
             session.getBasicRemote().sendText(message.toString());
+            System.out.println("sent back to browser");
         } catch (IOException ex) {
             sessions.remove(session);
             Logger.getLogger(MeassageHandler.class.getName()).log(Level.SEVERE, null, ex);

@@ -52,9 +52,13 @@ function removeServer(servid) {
 
 
 function onMessage(evt) {
-    if(evt.getString(action) == "add"){
+    var message = JSON.parseData(evt.data).getString(action);
+    if(message == "add"){
     var dt = new Date();
     servers.innerHTML = servers.innerHTML + "<br><b>>></b><font color=white>" + evt.data + "</font>  on:  " + dt.getDate() + ":" + dt.getMonth() + ":" + dt.getFullYear() + " " + dt.getHours() + ":" + dt.getMinutes() + "<a href = '#' onClick = 'removeServer();'>Remove Server</a> \n";
+    }
+    else if(message == "remove"){
+        alert("I is still working");
     }
     
 }
