@@ -17,10 +17,11 @@ function hideForm() {
 
 function submitForm() {
     var form = document.getElementById('_form');
+	 var dropDown = document.getElementById(‘dropDown’);
 
     var procSpeed = document.getElementById('_processorSpeed').value;
     var procCore = document.querySelector('input[name = _processorCore]:checked').value;
-    var ramCap = document.getElementById('_ramCap').value;
+    var ramCap = dropDown.getElementById('_ramCap').value;
     var ramSpeed = form.elements['_ramSpeed'].value;
     var net = form.elements['_type'].value;
     addServer(procSpeed, procCore, ramCap, ramSpeed, net);
