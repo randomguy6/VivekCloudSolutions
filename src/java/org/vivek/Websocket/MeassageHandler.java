@@ -35,6 +35,7 @@ public class MeassageHandler {
     
     public void addServer(ServerCred server){
         System.out.println("addServer Method");
+        server.setId(deviceId);
         servers.add(server);
         /*for(ServerCred serv: servers){
             System.out.println(serv.toString());
