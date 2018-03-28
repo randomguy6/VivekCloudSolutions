@@ -21,7 +21,8 @@ function submitForm() {
     var procSpeed = Number(document.getElementById('_processorSpeed').value);
     var procCore = Number(document.querySelector('input[name = _processorCore]:checked').value);
     var ramCap = Number(document.getElementById('_ramCap').value);
-    var ramSpeed = Number(form.elements['_ramSpeed'].value);
+    var rSpeed = form.elements['ramSpeed'];
+    var ramSpeed = Number(rSpeed.options[rSpeed.selectedIndex].value);
     var net = form.elements['_type'].value;
     addServer(procSpeed, procCore, ramCap, ramSpeed, net);
     form.reset();
