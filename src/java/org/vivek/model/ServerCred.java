@@ -11,53 +11,51 @@ package org.vivek.model;
  */
 public class ServerCred {
 
-    private String processorCore;
-    private String processorSpeed;
-    private String ramSpeed;
-    private String ramCore;
+    private int processorCore;
+    private int processorSpeed;
+    private int ramSpeed;
+    private int ramCore;
     private String Type;
     private int id;
     
-    public ServerCred(String processor, String ram) {
+    public ServerCred(int processor, int ram) {
         this.processorCore = processor;
         this.ramSpeed = ram;
     }
     public ServerCred(){
     }
 
-    public String getProcessorCore() {
+    public int getProcessorCore() {
         return processorCore;
     }
 
-    public void setProcessorCore(String processorCore) {
+    public void setProcessorCore(int processorCore) {
         this.processorCore = processorCore;
     }
 
-    public String getRamSpeed() {
-        return ramSpeed;
-    }
-
-    public void setRamSpeed(String ramSpeed) {
-        this.ramSpeed = ramSpeed;
-    }
-
-    public String getProcessorSpeed() {
+    public int getProcessorSpeed() {
         return processorSpeed;
     }
 
-    public void setProcessorSpeed(String processorSpeed) {
+    public void setProcessorSpeed(int processorSpeed) {
         this.processorSpeed = processorSpeed;
     }
 
-    public String getRamCore() {
+    public int getRamSpeed() {
+        return ramSpeed;
+    }
+
+    public void setRamSpeed(int ramSpeed) {
+        this.ramSpeed = ramSpeed;
+    }
+
+    public int getRamCore() {
         return ramCore;
     }
 
-    public void setRamCore(String ramCore) {
+    public void setRamCore(int ramCore) {
         this.ramCore = ramCore;
     }
-    
-    
 
     public String getType() {
         return Type;
@@ -66,7 +64,7 @@ public class ServerCred {
     public void setType(String Type) {
         this.Type = Type;
     }
-    
+
     public int getId() {
         return id;
     }
@@ -74,6 +72,8 @@ public class ServerCred {
     public void setId(int id) {
         this.id = id;
     }
+
+    
     
     public String toString(){
         return "Ram Speed: ("+ramSpeed+" MHz) Ram Capacity: ("+ramCore+ "GB), processor core count: ("+processorCore +"-core) processor speed: ("+processorSpeed+ " GHz) networktype: ("+Type +").";

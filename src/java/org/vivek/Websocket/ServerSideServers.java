@@ -64,10 +64,10 @@ public class ServerSideServers {
             if ("add".equals(jsonMessage.getString("action"))) {
                 System.out.println("handle message ADD");
                 ServerCred server = new ServerCred();
-                server.setProcessorCore(jsonMessage.getString("pCore"));
-                server.setProcessorSpeed(jsonMessage.getString("pSpeed"));
-                server.setRamSpeed(jsonMessage.getString("rSpeed"));
-                server.setRamCore(jsonMessage.getString("rCap"));
+                server.setProcessorCore(jsonMessage.getInt("pCore"));
+                server.setProcessorSpeed(jsonMessage.getInt("pSpeed"));
+                server.setRamSpeed(jsonMessage.getInt("rSpeed"));
+                server.setRamCore(jsonMessage.getInt("rCap"));
                 server.setType(jsonMessage.getString("nType"));
                 handler.addServer(server);
                 /*try {

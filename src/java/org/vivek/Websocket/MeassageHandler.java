@@ -37,6 +37,7 @@ public class MeassageHandler {
         System.out.println("addServer Method");
         server.setId(deviceId);
         servers.add(server);
+        deviceId++;
         /*for(ServerCred serv: servers){
             System.out.println(serv.toString());
         }*/
@@ -67,8 +68,11 @@ public class MeassageHandler {
         JsonProvider provider = JsonProvider.provider();
         JsonObject addMessage = provider.createObjectBuilder()
                 .add("action", "add")
-                .add("processor", survey.getProcessorCore())
-                .add("ram", survey.getRamSpeed())
+                .add("id", survey.getId())
+                .add("processorCore", survey.getProcessorCore())
+                .add("processorSpeed", survey.getProcessorSpeed())
+                .add("ramSpeed", survey.getRamSpeed())
+                .add("ramCap", survey.getRamCore())
                 .add("Type", survey.getType())
                 .build();
         return addMessage;
@@ -78,7 +82,7 @@ public class MeassageHandler {
         ServerCred ret = new ServerCred();
         for(ServerCred serv : servers){
             if(serv.getId()==id)
-                serv = ret;
+                ret = serv;
         }
         return ret;
     }
