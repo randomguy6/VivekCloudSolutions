@@ -34,12 +34,12 @@ body{
 }
 
 #buttons{
-    display: none;
+    display: block;
 }
 
 #_form span{
     padding: 0em 2em;
-    display: inline-block;
+    display: block;
 }
 #_rCap{
     padding: 0em 4em;
