@@ -7,20 +7,6 @@ and open the template in the editor.
     Created on : Feb 7, 2018, 12:23:15 PM
     Author     : sdonepudi3
 */
-h2 {
-}
-
-a{
-    text-decoration: none;
-    color: rgb(0,0,0);
-    background: rgb(255,255,255);
-}
-
-a:hover{
-    text-decoration: underline;
-    color:rgb(255,255,255);
-    background: rgb(0,0,0);
-}
 
 body{
     font-family: Helvetica, Courier New, Arial;
@@ -30,10 +16,32 @@ body{
     display: block;
     margin: auto;
 }
+
+#additional{
+    text-decoration: none;
+    color: rgb(0,0,0);
+    background: rgb(255,255,255);
+}
+
+#additional:hover{
+    text-decoration: underline;
+    color:rgb(255,255,255);
+    background: rgb(0,0,0);
+}
+
 #_form{
     color: #000000;
 }
 
-#_form span{
-    display: block;
+#buttons{
+    display: none;
 }
+
+#_form span{
+    padding: 0em 2em;
+    display: inline-block;
+}
+#_rCap{
+    padding: 0em 4em;
+}
+

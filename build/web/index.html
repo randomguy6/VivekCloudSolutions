@@ -4,7 +4,7 @@
         <title>Cloud Server Management Solution</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <a href = "http://computesolutions.tech"><img src="LogoName.png" alt="Its just the company name" title="Compute Solutions"><a>
+       <a href = "http://computesolutions.tech" id = "title"><img src="LogoName.png" alt="Its just the company name" title="Compute Solutions"><a>
         <script src="WebSockChanger.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
@@ -13,10 +13,10 @@
         
         <div>       
         <h2>Please fill out the server configuration and apply .</h2>
-        <a href="#" onClick="showForm();">Add a server</a>
+        <a href="#" onClick="showForm();" id = "additional">Add a server</a>
         <form id = '_form' action="">
             <h3>Add Server</h3>
-            <span>Processor Speed:<br>
+            <span>Processor Speed in GHz:<br>
             <input type = 'text' id = '_processorSpeed'></span>
             
             <span>Processor Core Count:<br>
@@ -25,10 +25,10 @@
             <input type = 'radio' name = '_processorCore' value = "2">2<br>
             <input type = 'radio' name = '_processorCore' value = "4">4<br></span>
             
-            <span>Ram Speed:<br>
+            <span>Ram Speed in GHz:<br>
             <input type = 'text' id = '_ramSpeed'></span>
             
-            <span>Ram Capacity:<br>
+            <span id = "rCap">Ram Capacity in GB:<br>
             <select id = “ramOptions”>
                 <option id = '_ramCap' value = "12" selected = "selected">12</option>
                 <option id = '_ramCap' value = "16">16</option>
@@ -40,9 +40,11 @@
             
             <span>Network Type:<br>
                 <input type = 'text' id = '_type' ></span><br>
+                <span id = "buttons">
             <input type = "button" value = 'Apply Server Profile' onclick='submitForm();'>
             <input type = "reset">
             <input type = "button" value = 'Cancel' onclick="hideForm();">
+            </span>
             </form>
                 </div>
                     
