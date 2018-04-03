@@ -79,9 +79,12 @@ public class ServerSideServers {
                 }*/
             if("remove".equals(jsonMessage.getString("action"))) {  
                 System.out.print("handle message REMOVE");
-                handler.removeServer(jsonMessage.getInt("id"));
+                int id = jsonMessage.getInt("id");
+                handler.removeServer(id);
             }
-                
+            else{
+                System.out.println("COuldnt find if statement");
+            }
             }
         }
 

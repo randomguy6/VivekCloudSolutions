@@ -20,9 +20,9 @@ function submitForm() {
 //  var dropDown = document.getElementById('ramOptions');
     var procSpeed = Number(document.getElementById('_processorSpeed').value);
     var procCore = Number(document.querySelector('input[name = _processorCore]:checked').value);
-    var ramCap = Number(document.getElementById('_ramCap').value);
-    var rSpeed = form.elements['ramSpeed'];
-    var ramSpeed = Number(rSpeed.options[rSpeed.selectedIndex].value);
+    var ramSpeed = Number(document.getElementById('_ramSpeed').value);
+    //var rCap = form.elements['rCap'];
+    var ramCap = Number(document.getElementById('ramOptions').value);
     var net = form.elements['_type'].value;
     addServer(procSpeed, procCore, ramCap, ramSpeed, net);
     form.reset();
