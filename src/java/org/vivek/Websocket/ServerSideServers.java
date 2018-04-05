@@ -60,8 +60,8 @@ public class ServerSideServers {
             System.out.println("handle message 2");
             JsonObject jsonMessage = reader.readObject();
             System.out.println("handle message 3");
-            
-            if ("add".equals(jsonMessage.getString("action"))) {
+            String action = jsonMessage.getString("action");
+            if (action.equals("add")) {
                 System.out.println("handle message ADD");
                 ServerCred server = new ServerCred();
                 server.setProcessorCore(jsonMessage.getInt("pCore"));
@@ -77,7 +77,8 @@ public class ServerSideServers {
                 } 
                 catch (Exception e) {
                 }*/
-            if("remove".equals(jsonMessage.getString("action"))) {  
+            }
+                else if(action.equals("remove")) {  
                 System.out.print("handle message REMOVE");
                 int id = jsonMessage.getInt("id");
                 handler.removeServer(id);
@@ -89,4 +90,3 @@ public class ServerSideServers {
         }
 
     }
-}

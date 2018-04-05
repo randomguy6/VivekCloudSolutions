@@ -29,12 +29,10 @@ public class MeassageHandler {
     private final Set<ServerCred> servers = new HashSet<>();
     
     public void addSession(Session session){
-        System.out.println("addSession Method");
         sessions.add(session);
     }
     
     public void addServer(ServerCred server){
-        System.out.println("addServer Method");
         server.setId(deviceId);
         servers.add(server);
         deviceId++;
@@ -43,7 +41,6 @@ public class MeassageHandler {
         }*/
         JsonObject addMessage = createAddMessage(server);
         sendToAllConnectedSessions(addMessage);
-        System.out.println("sent to all sessions");
     }
     
     public void removeServer(int id){
